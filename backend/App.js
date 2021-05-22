@@ -1,11 +1,15 @@
+//express คือการสร้าง server ให้อยู่ใน port ต่างๆ
 const express = require("express");
-const cors = require("cors");
-const swaggerUi = require("swagger-ui-express");
-const swaggerJsDoc = require("swagger-jsdoc");
 const database = require("./database.json");
 const app = express();
 const port = process.env.PORT || 5000;
+//Swagger
+const cors = require("cors");//ส่งข้อมูลข้ามport
+const swaggerUi = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
 
+//Swagger
+//กำหนด port swagger
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
@@ -53,6 +57,7 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  *      '200':
  *        description: A successful response
  */
+//API .json req-->คำขอ res-->ตอบสนอง
 app.get("/database",  (req, res) => {
   res.json(database);
 });

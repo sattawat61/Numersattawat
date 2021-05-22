@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Bar from './componant/bar';
 import {BrowserRouter as Router, Switch,Route,Link} from "react-router-dom";
-import Bisection from './page/Bisection';
+import Bisection from '../src/page/Rootof/Bisection';
 
 export default function App() {
   return (
